@@ -1,0 +1,20 @@
+
+executable              = test.sh
+arguments               = $(sample)
+Initialdir              = /afs/cern.ch/work/c/clu/test1/CMSSW_10_2_18/src/QCDAnalysis/AnalysisStep/test
+
+output                  = output/$(sample).out
+error                   = error/$(sample).err
+log                     = log/$(sample).log
+
+request_cpus            = 1
+request_memory          = 400M
+request_disk            = 40M
+ShouldTransferFiles     = NO
++JobFlavour             = "longlunch"
+x509userproxy           = /afs/cern.ch/user/c/clu/x509up
+
+queue sample from(
+    GluGluHToZZTo4L_M125_13TeV
+    tqH_HToZZTo4L_M125_13TeV
+)
